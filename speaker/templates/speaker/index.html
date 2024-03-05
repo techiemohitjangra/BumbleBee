@@ -1,0 +1,29 @@
+{% extends "speaker/base.html" %}
+{# comment: extend a block
+    {% block head %}
+        {{ block.super }}
+        <p></p>
+    {% endblock %}
+#}
+{% block input_form %}
+    <p>Index file loaded</p>
+    <div class="block_input_form">
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <div class="block_input_text">
+                <label for="input_text">Input Text</label>
+                <input id="input_text" name="input_text" type="text">
+            </div>
+            <div class="block_input_file">
+                <label for="input_audio">Input File</label>
+                <input id="input_audio"
+                       name="input_audio"
+                       type="file"
+                       accept="audio/*,video/*">
+            </div>
+            <div class="block_submit">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

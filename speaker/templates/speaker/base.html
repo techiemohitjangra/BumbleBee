@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>
+                {% block title %}BumbleBee{% endblock %}
+            </title>
+            <!-- favicon -->
+            {% block favicon %}
+                <link rel="icon"
+                      href="image/png"
+                      href="{% static 'speaker/images/favicon-color.ico' %}">
+            {% endblock %}
+            {% block stylesheet %}
+                <link rel="stylesheet" href="{% static 'speaker/css/base.css' %}">
+            {% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            {% block header %}
+                {% block nav %}
+                    <nav id="top-navbar" class="">
+                        <p>navbar</p>
+                    </nav>
+                {% endblock %}
+            {% endblock %}
+        </header>
+        <div class="root">
+            {% block body %}
+                {% block input_form %}{% endblock %}
+                {% block output %}{% endblock %}
+            {% endblock %}
+        </div>
+        <footer>
+            {% block footer %}&copy; Copyright 2024 by Mohit Jangra{% endblock %}
+        </footer>
+        {% block javascript %}{% endblock %}
+    </body>
+</html>
